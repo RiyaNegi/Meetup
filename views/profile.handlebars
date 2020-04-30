@@ -1,0 +1,42 @@
+<link type="text/css" href="/css/style2.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Archivo+Black&display=swap" rel="stylesheet">
+
+<div class="containerr">
+
+    <div class="column shift">
+        <div class="image">
+            <img class="img-circle rounded-circle" height="150px" src="http://api.adorable.io/avatars/{{userForHTML.id}}" />
+        </div>
+        <div class="row">
+            <div class="img-below">
+                <h2>{{userForHTML.name}}</h2>
+            </div>
+        </div>
+         <div class="tab-pane active in" id="about" style="margin-left:10px;">
+                {{userForHTML.profession}}<br>
+                {{userForHTML.city}}<br>
+                {{userForHTML.email}}<br>
+                {{userForHTML.phone}}<br>
+            </div>
+        <hr></hr>
+    </div>
+        <div>
+                <ul class="nav nav-tabs profile-tabs" id="profileTab">
+                    <li><a href="#attend" data-toggle="tab">Events Attended</a></li>
+                    <li><a href="#host" data-toggle="tab">Events Hosted</a></li>
+                </ul>
+                    <div class="tab-content detail">
+                            <div class="tab-pane in-hist" id="attend">
+                                {{#each attend}}
+                                     <h2>{{this.title}}</h2><h3>{{this.subtitle}}</h3><hr>
+                                   {{/each}}
+                            </div>
+                              <div class="tab-pane in-hist" id="host">
+                                  {{#each history}}
+                                     <h2>{{this.title}}</h2><h3>{{this.subtitle}}</h3><hr>
+                                   {{/each}}
+                                </div>
+                    </div>  
+        </div>
+        
+</div>

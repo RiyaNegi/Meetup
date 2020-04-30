@@ -1,0 +1,56 @@
+<link type="text/css" href="/css/style2.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Archivo+Black&display=swap" rel="stylesheet">
+<div class="containerr column">
+    <div class="title-box row">
+        <div class=" details-date column">
+            <div class="pos top">{{eventForHTML.day}}</div>
+            <div class="pos bottom">{{eventForHTML.month}}</div>
+        </div>
+        <div class="column">
+            <div class="header">{{eventForHTML.title}}</div>
+            <div class="below">Hosted by: {{eventForHTML.hostName}}</div>
+            <form class="below" style="margin-top: 5px" method="POST" action="/details">
+                <input type="hidden" name="userId" value="{{userForHTML.id}}" />
+                <input type="hidden" name="eventId" value="{{eventForHTML.id}}" />
+                <button type="submit" class="btn btn-primary btn-lg">Attend</button>
+            </form>
+        </div>
+    </div>
+    <hr></hr>
+    <div class="details">
+        <div><h3>Location:</h3><h4>{{eventForHTML.location}}</h4></div>
+        <div><h3>Date: </h3><h4>{{eventForHTML.date}}</h4></div> 
+        <div><h3>Time: </h3><h4>{{eventForHTML.time}}</h4></div>
+        <div><h3>Description: </h3><h4>{{eventForHTML.description}}</h4></div>
+        <div><h3>Attendees: </h3>
+        <div class="row">
+         {{#each members}}
+            <div class="column members-box">
+                <img class="rounded-circle" src="https://api.adorable.io/avatars/{{this.id}}" height="70px" /> 
+                <h5 style="text-align: center; margin-top: 5px"> {{this.name}}</h5>
+            </div>
+         {{/each}}
+        </div>
+        </div>
+    </div>
+    <hr></hr>
+        <div class="form-group">
+            <label class="control-label" for="inputLarge">    Comments:</label>
+            <form class="below" style="margin-top: 5px" method="POST" action="/comments">
+                <input type="hidden" name="userId" value="{{userForHTML.id}}" />
+                <input type="hidden" name="eventId" value="{{eventForHTML.id}}" />
+                <input class="form-control input-lg" type="text" name="text">
+                <button type="submit" style="margin-top: 10px" class="btn btn-primary">Post</button>
+            </form>
+        </div>
+
+        {{#each comments}}
+            <div class="column members-box">
+                <blockquote>
+                    <p>{{this.text}}</p>
+                    <small><img class="rounded-circle" src="https://api.adorable.io/avatars/{{this.userId}}" height="20px" /> {{this.userName}}</small>
+                </blockquote>
+
+            </div>
+         {{/each}}
+</div>

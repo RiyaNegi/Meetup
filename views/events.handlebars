@@ -1,0 +1,29 @@
+
+
+<div class="container">
+  <div class="row search-box">
+      <form action="events" id="custom-search-form">
+          <input type="hidden" name="userId" value="{{userForHTML.id}}" />
+        <div class=" span12">
+          <input type="text" class="search-input-box" placeholder="Search" name="search">
+          <button type="submit" class="btn"><i class="icon-search"></i></button>
+        </div>
+      </form>
+	</div>
+  {{#each eventsForHTML}}
+  <div class=" column events-box">
+    <div class="title-box row">
+        <div class=" details-date column">
+            <div class="pos top">{{this.day}}</div>
+            <div class="pos bottom">{{this.month}}</div>
+        </div>
+        <div class="column side ">
+            <a href="/details?userId={{../userForHTML.id}}&eventId={{this.id}}">{{this.title}}</a>
+            
+            <p class ="column insidebox">{{this.subtitle}}, Hosted by: {{this.hostName}}</p>
+        </div>
+    </div>
+  </div>
+  {{/each}}
+</div> 
+  

@@ -1,0 +1,115 @@
+create table users(
+   id INT NOT NULL AUTO_INCREMENT,
+   name VARCHAR(20) NOT NULL,
+   password VARCHAR(20) NOT NULL,
+   phone VARCHAR(10),
+   profession VARCHAR(20),
+   email VARCHAR(20),
+   city VARCHAR(20),
+   PRIMARY KEY ( id )
+);
+
+INSERT INTO users (name, password, phone, profession, email, city) VALUES("Riya Negi", "riya", "92839484","Fashion Designer","riyanegi@meetup.com","Pune");
+INSERT INTO users (name, password, phone, profession, email, city) VALUES("Neel Gandhi", "password", "238409808"," Developer","neelg@meetup.com","Gujrat");
+INSERT INTO users (name, password, phone, profession, email, city) VALUES("Ashish", "password", "238498234"," Student","ashish@meetup.com","Pune");
+INSERT INTO users (name, password, phone, profession, email, city) VALUES("Shanky Sontakke", "password", "238409808","Professional Dancer","shanky@meetup.com","Pune");
+INSERT INTO users (name, password, phone, profession, email, city) VALUES("Prachi Diwakar", "password", "238409808","Textile Designer","prachidiw@meetup.com","Mumbai");
+INSERT INTO users (name, password, phone, profession, email, city) VALUES("Sayali Savane", "password", "238409808","MBBS Doctor","sayalisav@meetup.com","Solapur");
+INSERT INTO users (name, password, phone, profession, email, city) VALUES("Rukmini BUgga", "password", "238409808","Architect","ruksbugga@meetup.com","Hyderabad");
+INSERT INTO users (id, name, password, phone, profession, email, city) VALUES(10,"Aditya Gujar", "password", "235645663","Food Blogger","aditya@meetup.com","Pune");
+INSERT INTO users (id, name, password, phone, profession, email, city) VALUES(12,"Allen Thomas", "password", "8967455343","Student","allen@meetup.com","Pune");
+
+
+create table events(
+   id INT NOT NULL AUTO_INCREMENT,
+   userId VARCHAR(10),
+   title VARCHAR(100) NOT NULL,
+   subtitle VARCHAR(100) NOT NULL,
+   description VARCHAR(500) NOT NULL,
+   location VARCHAR(200) NOT NULL,
+   dateofEvent date,
+   endDate date,
+   time VARCHAR(100) NOT NULL,
+   PRIMARY KEY ( id )
+);
+
+INSERT INTO events (userId, title,subtitle, description,location,dateOfEvent,endDate,time) VALUES(1,"Art Exhibition", "A great opportunity for aspiring modern artists","A one day exhibition for modern art painters to put on display their take on conceptual , hyperrealism , pop art , futurism and so on","Arteta Gallery , Senapati Bapat rd ,Pune","2019-10-21","2019-10-21","11am to 3pm");
+
+INSERT INTO events (userId, title,subtitle, description,location,dateOfEvent,endDate,time) VALUES(2,"Book launch", "Auhtor Arundati Roy is back with her best","Fans of her previous work like -Listening to Grasshoppers- can now grab a specially signed copy of her latest brainchild -My Seditious Heart"."Britis council Library, Ganeshkhind , Pune","2019-10-16","2019-10-16","11am to 4pm");
+
+INSERT INTO events (userId, title,subtitle, description,location,dateOfEvent,endDate,time) VALUES(3,"Comedy Special - Relatively Relatable", "Naveen Richards is in town tonight","Bangalore's very own Naveen Richad now looks to entertain Punekars with is wit and satirical analogies","Manmauji Cafe,Viman Nagar , Pune","2019-10-14","2019-10-14","7pm to 9pm");
+
+INSERT INTO events (userId, title,subtitle, description,location,dateOfEvent,endDate,time) VALUES(4,"Dance - Shake a Leg", "Time to showcase your dance moves","A contest of the city's best of the best. All dance forms are allowed ","Nehru Sohrab Hall , Ambedhkar rd , Pune","2019-10-12","2019-10-12","9am to 6pm");
+
+INSERT INTO events (userId, title,subtitle, description,location,dateOfEvent,endDate,time) VALUES(2,"Elementary Acting Workshop", "Acting Workshop to work on your reel skills","A method acting workshop for theatre actors to enhance their one-act-one-character skills","Gandharv Rangmandir , Congress house rd , Pune","2019-10-12","2019-10-12","9am to 5pm");
+
+INSERT INTO events (userId, title,subtitle, description,location,dateOfEvent,endDate,time) VALUES(3,"Football match", "Require few players for a match"," a friendly turf match between two teams.Need 5 players to fill the team. Forward and Defenders required","Decathlon , Viman Nagar , Pune","2019-10-14","2019-10-14","8am to 10am");
+
+INSERT INTO events (userId, title,subtitle, description,location,dateOfEvent,endDate,time) VALUES(4,"Gala Night", "Karaoke Open Mic","From Mukesh to Martin and Classical to Reggae , anything goes . Musical Intruments will be provided if required","Lord of the Drinks , Kalyani Nagar , Pune","2019-10-15","2019-10-15","8pm to 10pm");
+
+INSERT INTO events (userId, title,subtitle, description,location,dateOfEvent,endDate,time) VALUES(1,"High Tea - all the whats answered", "A brief seminar","A talk on the ever evolving corporate events and how to play the High Tea element to your strength","Banquet Hall , Conrad , Pune","2019-10-16","2019-10-16","10am to 12pm");
+
+INSERT INTO events (userId, title,subtitle, description,location,dateOfEvent,endDate,time) VALUES(2,"Interactive communication - The tomorrow of methods", "State-of--the-art guidelines to Interactive communication","Covers all forms including basic dialogue , nonverbal communication , game-books , interactive-fiction and storytelling , ambient intelligence","Lemon Tree Premier , Sadhu Vaswani Chowk rd , Pune","2019-10-19","2019-10-19","11am to 1pm");
+
+INSERT INTO events (userId, title,subtitle, description,location,dateOfEvent,endDate,time) VALUES(3,"Jordan's Way", "An insight into the great Michael Jordan's star studded career","An opportunity to learn how to play and practice the Jordan way from Michael Jordan himself. Age group 7 to 23","Westin International,Koregaon Park,Pune","2019-10-20","2019-10-20","10am to 3pm");
+
+INSERT INTO events (userId, title,subtitle, description,location,dateOfEvent,endDate,time) VALUES(3,"Football match", "require few players for a match"," a friendly turf match between two teams.Need 5 players to fill the team. Forward and Defenders required","viman nagar,sector 24, road no 15,","2019-10-10","2019-10-10","8am to 10am");
+INSERT INTO events (userId, title,subtitle, description,location,dateOfEvent,endDate,time) VALUES(2,"Movie time!", "catch latest movie"," watch 'joker' movie with a group of DC fans ","Inox theatre,akurdi,pradhikaran road","2019-01-11","2019-01-11","6:30pm");
+
+SELECT * FROM events WHERE title LIKE "%football%";
+
+create table attendees(
+    eventId INT,
+    userId INT
+);
+
+INSERT INTO attendees VALUES(1, 3);
+INSERT INTO attendees VALUES(1, 4);
+INSERT INTO attendees VALUES(1, 5);
+INSERT INTO attendees VALUES(2, 3);
+INSERT INTO attendees VALUES(2, 1);
+INSERT INTO attendees VALUES(3, 2);
+INSERT INTO attendees VALUES(3, 4);
+INSERT INTO attendees VALUES(3, 5);
+INSERT INTO attendees VALUES(3, 1);
+INSERT INTO attendees VALUES(3, 6);
+INSERT INTO attendees VALUES(4, 1);
+INSERT INTO attendees VALUES(4, 2);
+INSERT INTO attendees VALUES(4, 3);
+INSERT INTO attendees VALUES(4, 5);
+INSERT INTO attendees VALUES(4, 6);
+INSERT INTO attendees VALUES(5, 2);
+INSERT INTO attendees VALUES(5, 3);
+INSERT INTO attendees VALUES(6, 4);
+INSERT INTO attendees VALUES(6, 5);
+INSERT INTO attendees VALUES(6, 1);
+INSERT INTO attendees VALUES(7, 6);
+INSERT INTO attendees VALUES(7, 2);
+INSERT INTO attendees VALUES(7, 1);
+INSERT INTO attendees VALUES(8, 5);
+INSERT INTO attendees VALUES(8, 10);
+INSERT INTO attendees VALUES(8, 6);
+INSERT INTO attendees VALUES(8, 12);
+INSERT INTO attendees VALUES(9, 1);
+
+insert into users(id,name,password,phone) values(6,"sayali","sayali","9835655");
+
+
+SELECT userId FROM attendees WHERE attendees.eventId=
+
+SELECT id, name from users inner join attendees WHERE users.id = attendees.userId AND attendees.eventId = 1;
+
+select events.id, events.userId, events.title, users.name from events inner join users where events.userId = users.id;
+SELECT events.*, users.* FROM events INNER JOIN users ON events.userId = users.id WHERE title LIKE "%%";
+SELECT events.id,events.title,events.subtitle, attendees.* FROM events INNER JOIN attendees where events.id = attendees.eventId;
+
+
+create table comments(
+    eventId INT,
+    userId INT,
+    text VARCHAR(500)
+);
+
+INSERT INTO comments values(2, 1, "First comment");
+INSERT INTO comments values(1, 1, "aaaaaSecond comment");
+INSERT INTO comments values(2, 2, "Second comment");

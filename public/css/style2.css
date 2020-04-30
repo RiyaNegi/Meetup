@@ -1,0 +1,112 @@
+
+
+.containerr {
+    display : flex;
+    margin:50px;
+    background:#fff;
+    border-radius: 10px;
+    box-shadow:10px 10px 0px rgba(0,0,0,0.1);
+    padding: 40px;
+}
+.column{
+    flex-direction:column;
+}
+.details-date {
+    width: 90px;
+    height: 100px;
+    border-radius:12px;
+    border: 1px solid #d0d0d0;
+    background-color: #ebebeb;
+  }
+
+.pos{
+    text-align:center;
+    font-size:28px;
+    font-weight :bold;
+}
+.top{
+    margin-top:12px;
+    color:#f71f62;
+}
+
+.bottom{
+    margin-top:-4px;
+    color:#6b6666;
+}
+
+.header{
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 45px;
+    font-weight:400;
+    margin-left: 28px;  
+    margin-top:-4px;
+
+}
+.below{
+    margin-top:-12px;
+    margin-left: 30px;
+    font-size :25px;
+    color:#6b6666;
+}
+
+hr {
+    width: 60%;
+    margin-top:30px;
+    margin-left: -8px;
+    width: 100%;
+    background-color: #dedede;
+    height: 1px
+    }
+
+.members-box{
+    margin-left: 15px;
+    margin-right: 15px;
+}
+
+.shift{
+    margin:30px;
+    margin-top:-5px;
+}
+.under{
+    margin-top:20px;
+}
+.image{
+    display:flex;
+    margin:auto;
+}
+
+.img-below{
+    margin-top:0px;
+    margin-left:30px;
+}
+
+.centered-text{
+    margin : 30px;
+    margin-left: 80px;
+  text-align: center;
+}
+.nav{
+    margin-left:80px;
+    margin-top:35px;
+    size:10;
+}
+
+.profile-tabs a {
+    font-size: 20px;
+}
+
+.detail{
+    margin-top:10px;
+    margin-left:150px;
+}
+.in{
+    margin-top: 10px;
+    font-size:25px;
+    color:rgb(77, 76, 76);
+}
+
+.in-hist{
+}
+.idk{
+    margin-left:55px;
+}

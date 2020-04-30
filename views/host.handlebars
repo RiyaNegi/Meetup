@@ -1,0 +1,71 @@
+<script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+<script>
+    $(function() {
+    $('input[name="date"]').daterangepicker({
+        singleDatePicker: true,
+        showDropdowns: true,
+        minYear: 2019,
+        maxYear: parseInt(moment().format('YYYY'),10)
+    }, function(start, end, label) {
+        var years = moment().diff(start, 'years');
+    });
+    });
+</script>
+<link type="text/css" href="/css/style2.css" rel="stylesheet">
+<div class="containerr">
+<form class="form-horizontal" method="POST" action="/host">
+  <fieldset>
+    <div class="form-group">
+      <label for="textArea" class="col-lg-2 control-label">Title</label>
+      <div class="col-lg-10">
+        <input name="title" type="text" class="form-control" id="textArea" placeholder="Title">
+        </div>
+    </div>
+    <div class="form-group">
+      <label for="textArea" class="col-lg-1 control-label idk">Subtitle</label>
+      <div class="col-lg-10">
+        <input name="subtitle" type="text" class="form-control" id="textArea" placeholder="Subtitle">
+        </div>
+    </div>
+
+    <div class="form-group">
+      <label for="textArea" class="col-lg-1 control-label idk">Date</label>
+      <div class="col-lg-10">
+        <input type="text" name="date" class="form-control" id="textArea" placeholder="Date">
+        </div>
+    </div>
+
+
+     <div class="form-group">
+      <label for="textArea" class="col-lg-1 control-label idk">Timings</label>
+      <div class="col-lg-10">
+        <input name="time" type="text" class="form-control" id="textArea" placeholder="Timings">
+        </div>
+    </div>
+
+    <div class="form-group">
+      <label for="textArea" class="col-lg-2 control-label">Description of event</label>
+      <div class="col-lg-10">
+        <textarea name="description" class="form-control" rows="3" id="textArea"></textarea>
+      </div>
+    </div>
+    
+    <div class="form-group">
+      <label for="textArea" class="col-lg-2 control-label">Location of event</label>
+      <div class="col-lg-10">
+        <textarea name="location" class="form-control" rows="3" id="textArea"></textarea>
+        <span class="help-block" style="color: white; ">A longer block of help text that breaks onto a new line and may extend beyond one line.</span>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="col-lg-10 col-lg-offset-2">
+        <input type="hidden" name="userId" value="{{userForHTML.id}}" />
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </div>
+    </div>
+  </fieldset>
+</form>
+</div>
+
